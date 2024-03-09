@@ -11,7 +11,7 @@ describe('AppComponentComponent', () => {
       declarations: [AppComponentComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(AppComponentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -20,4 +20,8 @@ describe('AppComponentComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should see name', () => {
+    expect(component.name).toEqual('name')
+  })
 });
