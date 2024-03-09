@@ -12,6 +12,8 @@ import { HostListenerDirective } from './directive/host-listener.directive';
 import { HostBindingDirective } from './directive/host-binding.directive';
 import { InputtingDirective } from './directive/inputting.directive';
 import { UnlessDirective } from './directive/unles..directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AnimationComponent } from './animation/animation.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,12 @@ import { UnlessDirective } from './directive/unles..directive';
     HostListenerDirective,
     HostBindingDirective,
     InputtingDirective,
-    UnlessDirective
+    UnlessDirective,
+    AnimationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideClientHydration()
