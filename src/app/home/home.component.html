@@ -1,0 +1,28 @@
+<app-signals></app-signals>
+<app-component></app-component>
+<app-local-reference>xyz</app-local-reference>
+<div *ngFor="let element of elements">
+  <app-lifecycle-hooks [name]="element"></app-lifecycle-hooks>
+</div>
+<button (click)="handleRemove()">Remove</button>
+
+<div text-highlight-1>
+  highlight
+</div>
+<div text-highlight-2>
+  highlight
+</div>
+<div text-highlight-3>
+  highlight
+</div>
+<div text-highlight-4>
+  highlight
+</div>
+<div text-highlight-5 [defaultColor]="'pink'" [highlightColor]="'cyan'">
+  highlight
+</div>
+<div *unless="true">
+  highlight dir
+</div>
+
+

@@ -1,3 +1,5 @@
+import { canDeactivate } from './../canDeactivate.service';
+import { ActivatedRoute, CanDeactivate } from '@angular/router';
 import {
   animate,
   keyframes,
@@ -7,6 +9,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component } from '@angular/core';
+import { Router } from 'express';
 
 @Component({
   selector: 'app-animation',
@@ -59,14 +62,26 @@ import { Component } from '@angular/core';
     ]),
   ],
 })
-export class AnimationComponent {
+export class AnimationComponent  {
   state = 'first_state';
+  public close = false;
+
+  constructor(private route: ActivatedRoute) {}
 
   onAnimate() {
     this.state = this.state === 'first_state' ? 'second_state' : 'first_state';
+    this.close = true;
   }
 
   onShrink() {
     this.state = 'third_state';
+    this.close = false;
   }
+
+  ngOnInit() {
+    this.route.data.subscribe((res) => {
+      console.log(res)
+    })
+  }
+
 }
